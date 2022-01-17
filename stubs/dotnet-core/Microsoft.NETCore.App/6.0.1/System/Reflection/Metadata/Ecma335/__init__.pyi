@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class MetadataAggregator(Object):
+    @overload
+    def __init__(self, baseReader: MetadataReader, deltaReaders: IReadOnlyList): ...
+    @overload
+    def __init__(self, baseTableRowCounts: IReadOnlyList, baseHeapSizes: IReadOnlyList, deltaReaders: IReadOnlyList): ...
+    def GetGenerationHandle(self, handle: Handle) -> Tuple[Handle, int]: ...

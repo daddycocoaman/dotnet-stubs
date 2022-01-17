@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class ShortcutGPOSettings(PolicyMakerElement):
+    def __init__(self): ...
+    @property
+    def Shortcuts(self) -> Collection: ...
+    @Shortcuts.setter
+    def Shortcuts(self, value: Collection) -> None: ...

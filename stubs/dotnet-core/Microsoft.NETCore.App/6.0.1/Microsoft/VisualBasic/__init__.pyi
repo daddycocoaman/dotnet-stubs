@@ -1,0 +1,13 @@
+__all__ = ['CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','CompilerServices','FileIO','FileIO','FileIO','FileIO','FileIO','FileIO','FileIO','FileIO','FileIO','FileIO']
+from typing import Tuple, Set, Iterable, List
+
+
+class VBMath:
+    @overload
+    def Randomize() -> None: ...
+    @overload
+    def Randomize(Number: float) -> None: ...
+    @overload
+    def Rnd() -> Single: ...
+    @overload
+    def Rnd(Number: Single) -> Single: ...

@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class StartMenuGPOSettings(PolicyMakerElement):
+    def __init__(self): ...
+    @property
+    def StartMenus(self) -> Collection: ...
+    @StartMenus.setter
+    def StartMenus(self, value: Collection) -> None: ...

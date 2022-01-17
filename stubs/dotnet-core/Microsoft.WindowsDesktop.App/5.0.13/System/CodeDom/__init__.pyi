@@ -1,0 +1,13 @@
+__all__ = ['Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler']
+from typing import Tuple, Set, Iterable, List
+
+
+class CodeVariableReferenceExpression(CodeExpression):
+    @overload
+    def __init__(self): ...
+    @overload
+    def __init__(self, variableName: str): ...
+    @property
+    def VariableName(self) -> str: ...
+    @VariableName.setter
+    def VariableName(self, value: str) -> None: ...

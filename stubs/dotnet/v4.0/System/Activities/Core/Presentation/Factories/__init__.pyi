@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class StateMachineWithInitialStateFactory(Object):
+    def __init__(self): ...
+    def Create(self, target: DependencyObject) -> Activity: ...

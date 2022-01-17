@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class RegionalOptionsGPOSettings(PolicyMakerElement):
+    def __init__(self): ...
+    @property
+    def RegionalOptions(self) -> Collection: ...
+    @RegionalOptions.setter
+    def RegionalOptions(self, value: Collection) -> None: ...

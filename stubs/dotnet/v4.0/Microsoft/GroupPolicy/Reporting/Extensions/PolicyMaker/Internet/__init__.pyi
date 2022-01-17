@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class InternetGPOSettings(PolicyMakerElement):
+    def __init__(self): ...
+    @property
+    def InternetSettings(self) -> Collection: ...
+    @InternetSettings.setter
+    def InternetSettings(self, value: Collection) -> None: ...

@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class JSObjectReference:
+    def DisposeAsync(self) -> ValueTask: ...
+    @overload
+    def InvokeAsync(self, identifier: str, args: Set(Object)) -> ValueTask: ...
+    @overload
+    def InvokeAsync(self, identifier: str, cancellationToken: CancellationToken, args: Set(Object)) -> ValueTask: ...

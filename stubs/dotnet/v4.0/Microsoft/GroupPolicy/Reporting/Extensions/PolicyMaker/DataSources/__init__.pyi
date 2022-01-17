@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class DataSourcesGPOSettings(PolicyMakerElement):
+    def __init__(self): ...
+    @property
+    def DataSources(self) -> Collection: ...
+    @DataSources.setter
+    def DataSources(self, value: Collection) -> None: ...

@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class DevicesGPOSettings(PolicyMakerElement):
+    def __init__(self): ...
+    @property
+    def Devices(self) -> Collection: ...
+    @Devices.setter
+    def Devices(self, value: Collection) -> None: ...

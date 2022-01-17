@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class StaticWebAssetsLoader:
+    def __init__(self): ...
+    def UseStaticWebAssets(environment: IWebHostEnvironment, configuration: IConfiguration) -> None: ...

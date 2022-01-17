@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class WelcomePageMiddleware:
+    def __init__(self, next: RequestDelegate, options: IOptions): ...
+    def Invoke(self, context: HttpContext) -> Task: ...

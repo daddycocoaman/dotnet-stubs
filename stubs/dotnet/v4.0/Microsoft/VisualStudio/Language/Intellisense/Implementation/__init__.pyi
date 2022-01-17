@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class SmartTagSurface:
+    def __init__(self): ...
+    def InitializeComponent(self) -> None: ...

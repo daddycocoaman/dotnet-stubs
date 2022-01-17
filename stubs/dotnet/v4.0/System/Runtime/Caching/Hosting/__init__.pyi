@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class IMemoryCacheManager:
+    def ReleaseCache(self, cache: MemoryCache) -> None: ...
+    def UpdateCacheSize(self, size: Int64, cache: MemoryCache) -> None: ...

@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class PageRouteTransformerConvention:
+    def __init__(self, parameterTransformer: IOutboundParameterTransformer): ...
+    def Apply(self, model: PageRouteModel) -> None: ...

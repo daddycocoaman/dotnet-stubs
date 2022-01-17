@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class UrlHelperFactory:
+    def __init__(self): ...
+    def GetUrlHelper(self, context: ActionContext) -> IUrlHelper: ...

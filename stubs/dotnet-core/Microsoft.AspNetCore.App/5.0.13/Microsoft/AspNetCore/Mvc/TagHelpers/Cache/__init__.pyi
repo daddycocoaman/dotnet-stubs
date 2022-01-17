@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class IDistributedCacheTagHelperStorage:
+    def GetAsync(self, key: str) -> Task: ...
+    def SetAsync(self, key: str, value: Set(Byte), options: DistributedCacheEntryOptions) -> Task: ...

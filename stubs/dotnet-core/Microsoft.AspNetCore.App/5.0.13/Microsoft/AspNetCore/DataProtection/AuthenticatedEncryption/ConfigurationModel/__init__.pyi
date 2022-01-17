@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class XmlSerializedDescriptorInfo:
+    def __init__(self, serializedDescriptorElement: XElement, deserializerType: Type): ...
+    @property
+    def DeserializerType(self) -> Type: ...
+    @property
+    def SerializedDescriptorElement(self) -> XElement: ...

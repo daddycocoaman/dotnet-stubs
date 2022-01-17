@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class ShowInOutlineViewAttribute(Attribute):
+    def __init__(self): ...
+    @property
+    def PromotedProperty(self) -> str: ...
+    @PromotedProperty.setter
+    def PromotedProperty(self, value: str) -> None: ...

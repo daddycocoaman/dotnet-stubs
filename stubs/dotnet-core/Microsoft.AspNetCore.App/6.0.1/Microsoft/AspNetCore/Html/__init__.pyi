@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class IHtmlContentContainer:
+    def CopyTo(self, builder: IHtmlContentBuilder) -> None: ...
+    def MoveTo(self, builder: IHtmlContentBuilder) -> None: ...

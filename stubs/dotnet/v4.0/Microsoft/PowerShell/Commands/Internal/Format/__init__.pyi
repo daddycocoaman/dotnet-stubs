@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class FrontEndCommandBase:
+    def Dispose(self) -> None: ...
+    @property
+    def InputObject(self) -> PSObject: ...
+    @InputObject.setter
+    def InputObject(self, value: PSObject) -> None: ...

@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class ConfigurationPermissionAttribute(CodeAccessSecurityAttribute):
+    def __init__(self, action: SecurityAction): ...
+    def CreatePermission(self) -> IPermission: ...

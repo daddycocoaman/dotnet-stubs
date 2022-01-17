@@ -1,0 +1,9 @@
+__all__ = ['Instrumentation','Instrumentation','Instrumentation','Instrumentation','Instrumentation','Instrumentation','Instrumentation','Instrumentation','Instrumentation','Instrumentation','Instrumentation','Instrumentation']
+from typing import Tuple, Set, Iterable, List
+
+
+class MethodDataEnumerator(Object):
+    @property
+    def Current(self) -> MethodData: ...
+    def MoveNext(self) -> bool: ...
+    def Reset(self) -> None: ...

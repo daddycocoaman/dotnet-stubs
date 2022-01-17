@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class SimpleTypeModelBinderProvider:
+    def __init__(self): ...
+    def GetBinder(self, context: ModelBinderProviderContext) -> IModelBinder: ...

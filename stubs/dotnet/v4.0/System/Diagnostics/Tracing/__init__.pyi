@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class EventCounter(Object):
+    def __init__(self, name: str, eventSource: EventSource): ...
+    def WriteMetric(self, value: Single) -> None: ...

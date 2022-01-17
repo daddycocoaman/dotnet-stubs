@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class WindowsAuthenticationElement(ConfigurationElement):
+    def __init__(self): ...
+    @property
+    def DefaultCredentialsHandleCacheSize(self) -> int: ...
+    @DefaultCredentialsHandleCacheSize.setter
+    def DefaultCredentialsHandleCacheSize(self, value: int) -> None: ...

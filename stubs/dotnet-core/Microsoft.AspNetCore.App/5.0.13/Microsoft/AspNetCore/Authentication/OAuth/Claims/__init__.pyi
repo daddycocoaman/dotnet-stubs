@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class MapAllClaimsAction(ClaimAction):
+    def __init__(self): ...
+    def Run(self, userData: JsonElement, identity: ClaimsIdentity, issuer: str) -> None: ...

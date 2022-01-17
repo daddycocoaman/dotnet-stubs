@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class SystemPolicy(Object):
+    def GetLockdownPolicy(path: str, handle: SafeHandle) -> SystemEnforcementMode: ...
+    def GetSystemLockdownPolicy() -> SystemEnforcementMode: ...

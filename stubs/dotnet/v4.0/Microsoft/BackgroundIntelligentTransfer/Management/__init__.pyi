@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class SuspendBitsTransferCommand:
+    def __init__(self): ...
+    @property
+    def BitsJob(self) -> Set(BitsJob): ...
+    @BitsJob.setter
+    def BitsJob(self, value: Set(BitsJob)) -> None: ...

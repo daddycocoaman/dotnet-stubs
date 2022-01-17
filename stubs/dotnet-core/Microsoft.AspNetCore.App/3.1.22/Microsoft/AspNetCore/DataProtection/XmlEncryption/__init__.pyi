@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class NullXmlEncryptor:
+    @overload
+    def __init__(self): ...
+    @overload
+    def __init__(self, services: IServiceProvider): ...
+    def Encrypt(self, plaintextElement: XElement) -> EncryptedXmlInfo: ...

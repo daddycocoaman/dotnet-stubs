@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class ValidatorCache:
+    def __init__(self): ...
+    def GetValidators(self, metadata: ModelMetadata, validatorProvider: IModelValidatorProvider) -> IReadOnlyList: ...

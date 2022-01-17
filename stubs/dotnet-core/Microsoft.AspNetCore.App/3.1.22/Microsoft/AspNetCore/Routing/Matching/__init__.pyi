@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class PolicyNodeEdge:
+    def __init__(self, state: Object, endpoints: IReadOnlyList): ...
+    @property
+    def Endpoints(self) -> IReadOnlyList: ...
+    @property
+    def State(self) -> Object: ...

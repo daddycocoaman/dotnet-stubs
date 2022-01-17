@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class UsePathBaseMiddleware:
+    def __init__(self, next: RequestDelegate, pathBase: PathString): ...
+    def Invoke(self, context: HttpContext) -> Task: ...

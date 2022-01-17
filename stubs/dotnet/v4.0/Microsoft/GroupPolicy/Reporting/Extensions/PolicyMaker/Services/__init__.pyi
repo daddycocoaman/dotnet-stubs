@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class ServiceGPOSettings(PolicyMakerElement):
+    def __init__(self): ...
+    @property
+    def Services(self) -> Collection: ...
+    @Services.setter
+    def Services(self, value: Collection) -> None: ...

@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class JsonStreamConfigurationSource(StreamConfigurationSource):
+    def __init__(self): ...
+    def Build(self, builder: IConfigurationBuilder) -> IConfigurationProvider: ...

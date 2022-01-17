@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class IISMiddleware:
+    @overload
+    def __init__(self, next: RequestDelegate, loggerFactory: ILoggerFactory, options: IOptions, pairingToken: str, authentication: IAuthenticationSchemeProvider, applicationLifetime: IHostApplicationLifetime): ...
+    @overload
+    def __init__(self, next: RequestDelegate, loggerFactory: ILoggerFactory, options: IOptions, pairingToken: str, isWebsocketsSupported: bool, authentication: IAuthenticationSchemeProvider, applicationLifetime: IHostApplicationLifetime): ...
+    def Invoke(self, httpContext: HttpContext) -> Task: ...

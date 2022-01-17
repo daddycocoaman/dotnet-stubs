@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class EntitySqlParser(Object):
+    def Parse(self, query: str, parameters: Set(DbParameterReferenceExpression)) -> ParseResult: ...
+    def ParseLambda(self, query: str, variables: Set(DbVariableReferenceExpression)) -> DbLambda: ...

@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class HostServices:
+    def __init__(self): ...
+    @property
+    def VBHost() -> IVbHost: ...
+    @VBHost.setter
+    def VBHost(Value: IVbHost) -> None: ...

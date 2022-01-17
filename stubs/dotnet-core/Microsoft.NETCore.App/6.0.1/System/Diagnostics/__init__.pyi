@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class SwitchLevelAttribute(Attribute):
+    def __init__(self, switchLevelType: Type): ...
+    @property
+    def SwitchLevelType(self) -> Type: ...
+    @SwitchLevelType.setter
+    def SwitchLevelType(self, value: Type) -> None: ...

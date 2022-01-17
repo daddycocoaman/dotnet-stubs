@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class SystemDrawingSection(ConfigurationSection):
+    def __init__(self): ...
+    @property
+    def BitmapSuffix(self) -> str: ...
+    @BitmapSuffix.setter
+    def BitmapSuffix(self, value: str) -> None: ...

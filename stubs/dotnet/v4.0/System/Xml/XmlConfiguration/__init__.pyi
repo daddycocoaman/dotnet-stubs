@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class XsltConfigSection(ConfigurationSection):
+    def __init__(self): ...
+    @property
+    def ProhibitDefaultResolverString(self) -> str: ...
+    @ProhibitDefaultResolverString.setter
+    def ProhibitDefaultResolverString(self, value: str) -> None: ...

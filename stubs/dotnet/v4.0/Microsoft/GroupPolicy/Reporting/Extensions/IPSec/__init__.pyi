@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class IPSecRsopReader:
+    def __init__(self, rsopReader: RsopReader): ...
+    def GetIPSecPolicyObject(self) -> ManagementObject: ...

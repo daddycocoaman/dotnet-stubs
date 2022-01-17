@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class VirtualFileResultExecutor(FileResultExecutorBase):
+    def __init__(self, loggerFactory: ILoggerFactory, hostingEnvironment: IWebHostEnvironment): ...
+    def ExecuteAsync(self, context: ActionContext, result: VirtualFileResult) -> Task: ...

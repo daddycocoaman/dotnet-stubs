@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class WorkflowIdentityConverter(TypeConverter):
+    def __init__(self): ...
+    @overload
+    def CanConvertFrom(self, context: ITypeDescriptorContext, sourceType: Type) -> bool: ...
+    @overload
+    def ConvertFrom(self, context: ITypeDescriptorContext, culture: CultureInfo, value: Object) -> Object: ...

@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class PollingWildCardChangeToken:
+    def __init__(self, root: str, pattern: str): ...
+    @property
+    def ActiveChangeCallbacks(self) -> bool: ...
+    @property
+    def HasChanged(self) -> bool: ...

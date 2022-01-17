@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class PrintersGPOSettings(PolicyMakerElement):
+    def __init__(self): ...
+    @property
+    def PrintersSettingsList(self) -> Collection: ...
+    @PrintersSettingsList.setter
+    def PrintersSettingsList(self, value: Collection) -> None: ...

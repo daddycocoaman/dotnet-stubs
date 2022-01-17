@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class DfaGraphWriter:
+    def __init__(self, services: IServiceProvider): ...
+    def Write(self, dataSource: EndpointDataSource, writer: TextWriter) -> None: ...

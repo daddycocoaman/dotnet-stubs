@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class FolderOptionsGPOSettings(PolicyMakerElement):
+    def __init__(self): ...
+    @property
+    def FolderOptionsSettingsList(self) -> Collection: ...
+    @FolderOptionsSettingsList.setter
+    def FolderOptionsSettingsList(self, value: Collection) -> None: ...

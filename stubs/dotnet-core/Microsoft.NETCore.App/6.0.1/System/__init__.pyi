@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class UriParser(Object):
+    def IsKnownScheme(schemeName: str) -> bool: ...
+    def Register(uriParser: UriParser, schemeName: str, defaultPort: int) -> None: ...

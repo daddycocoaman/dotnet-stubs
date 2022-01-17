@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class DisablePSWorkflowConnection(PSCleanupActivity):
+    def __init__(self): ...
+    @property
+    def TimeoutSec(self) -> InArgument: ...
+    @TimeoutSec.setter
+    def TimeoutSec(self, value: InArgument) -> None: ...

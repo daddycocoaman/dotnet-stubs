@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class CmdletProviderAttribute(Attribute):
+    def __init__(self, providerName: str, providerCapabilities: ProviderCapabilities): ...
+    @property
+    def ProviderCapabilities(self) -> ProviderCapabilities: ...
+    @property
+    def ProviderName(self) -> str: ...

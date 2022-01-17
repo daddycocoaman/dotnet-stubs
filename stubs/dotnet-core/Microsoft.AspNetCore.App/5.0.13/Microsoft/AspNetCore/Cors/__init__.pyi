@@ -1,0 +1,13 @@
+__all__ = ['Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure']
+from typing import Tuple, Set, Iterable, List
+
+
+class EnableCorsAttribute:
+    @overload
+    def __init__(self): ...
+    @overload
+    def __init__(self, policyName: str): ...
+    @property
+    def PolicyName(self) -> str: ...
+    @PolicyName.setter
+    def PolicyName(self, value: str) -> None: ...

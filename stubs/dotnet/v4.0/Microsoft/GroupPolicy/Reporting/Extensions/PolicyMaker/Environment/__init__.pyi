@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class EnvironmentVariablesGPOSettings(PolicyMakerElement):
+    def __init__(self): ...
+    @property
+    def EnvironmentSettingsList(self) -> List: ...
+    @EnvironmentSettingsList.setter
+    def EnvironmentSettingsList(self, value: List) -> None: ...

@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class ServiceNameElement(ConfigurationElement):
+    def __init__(self): ...
+    @property
+    def Name(self) -> str: ...
+    @Name.setter
+    def Name(self, value: str) -> None: ...

@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class IAntiforgeryAdditionalDataProvider:
+    def GetAdditionalData(self, context: HttpContext) -> str: ...
+    def ValidateAdditionalData(self, context: HttpContext, additionalData: str) -> bool: ...

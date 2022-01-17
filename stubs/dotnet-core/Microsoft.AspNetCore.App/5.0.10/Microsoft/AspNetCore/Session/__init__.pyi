@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class SessionMiddleware:
+    def __init__(self, next: RequestDelegate, loggerFactory: ILoggerFactory, dataProtectionProvider: IDataProtectionProvider, sessionStore: ISessionStore, options: IOptions): ...
+    def Invoke(self, context: HttpContext) -> Task: ...

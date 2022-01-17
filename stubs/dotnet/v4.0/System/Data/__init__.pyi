@@ -1,0 +1,9 @@
+__all__ = ['Common','Common','Common','Common','Common','Common','Common','EntityClient','EntityClient','EntityClient','EntityClient','EntityClient','EntityClient','EntityClient','EntityClient','Mapping','Mapping','Mapping','Mapping','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Objects','Spatial','Spatial','Spatial','Spatial','Spatial','Spatial','SqlClient']
+from typing import Tuple, Set, Iterable, List
+
+
+class IExtendedDataRecord:
+    @property
+    def DataRecordInfo(self) -> DataRecordInfo: ...
+    def GetDataReader(self, i: int) -> DbDataReader: ...
+    def GetDataRecord(self, i: int) -> DbDataRecord: ...

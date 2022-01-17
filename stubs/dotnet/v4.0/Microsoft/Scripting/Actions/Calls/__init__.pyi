@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class InferenceResult:
+    def __init__(self, type: Type, restrictions: BindingRestrictions): ...
+    @property
+    def Restrictions(self) -> BindingRestrictions: ...
+    @property
+    def Type(self) -> Type: ...

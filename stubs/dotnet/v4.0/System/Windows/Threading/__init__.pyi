@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class TaskExtensions(Object):
+    @overload
+    def DispatcherOperationWait(this: Task) -> DispatcherOperationStatus: ...
+    @overload
+    def DispatcherOperationWait(this: Task, timeout: TimeSpan) -> DispatcherOperationStatus: ...
+    def IsDispatcherOperationTask(this: Task) -> bool: ...

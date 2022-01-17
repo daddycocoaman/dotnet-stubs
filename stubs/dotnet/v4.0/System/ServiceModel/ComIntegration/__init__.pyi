@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class WasHostedComPlusFactory(ServiceHostFactoryBase):
+    def __init__(self): ...
+    def CreateServiceHost(self, constructorString: str, baseAddresses: Set(Uri)) -> ServiceHostBase: ...

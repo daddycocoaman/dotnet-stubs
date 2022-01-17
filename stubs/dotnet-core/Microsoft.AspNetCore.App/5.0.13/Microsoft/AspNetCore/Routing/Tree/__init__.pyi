@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class UrlMatchingTree:
+    def __init__(self, order: int): ...
+    @property
+    def Order(self) -> int: ...
+    @property
+    def Root(self) -> UrlMatchingNode: ...

@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class StoreInterface:
+    def GetPolicyXmlFromAD(policyName: str, policyDSPath: str, policyType: L2GPPolicyType) -> XmlDocument: ...
+    def GetPolicyXmlFromWmi(policyId: str, wmiNamespace: str, policyType: L2GPPolicyType) -> XmlDocument: ...

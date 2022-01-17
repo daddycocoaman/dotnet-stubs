@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class XmlStreamConfigurationSource(StreamConfigurationSource):
+    def __init__(self): ...
+    def Build(self, builder: IConfigurationBuilder) -> IConfigurationProvider: ...

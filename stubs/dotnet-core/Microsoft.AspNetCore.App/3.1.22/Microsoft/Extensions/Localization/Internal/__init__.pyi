@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class ResourceManagerStringProvider:
+    def __init__(self, resourceCache: IResourceNamesCache, resourceManager: ResourceManager, assembly: Assembly, baseName: str): ...
+    def GetAllResourceStrings(self, culture: CultureInfo, throwOnMissing: bool) -> List[str]: ...

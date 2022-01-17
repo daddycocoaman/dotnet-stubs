@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class StateMachineStateRecord(CustomTrackingRecord):
+    def __init__(self): ...
+    @property
+    def StateMachineName(self) -> str: ...
+    @property
+    def StateName(self) -> str: ...

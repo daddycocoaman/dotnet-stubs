@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class EdmFunctionAttribute(Attribute):
+    def __init__(self, namespaceName: str, functionName: str): ...
+    @property
+    def FunctionName(self) -> str: ...
+    @property
+    def NamespaceName(self) -> str: ...

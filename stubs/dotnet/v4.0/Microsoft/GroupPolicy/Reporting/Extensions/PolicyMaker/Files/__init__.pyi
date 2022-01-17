@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class FilesGPOSettings(PolicyMakerElement):
+    def __init__(self): ...
+    @property
+    def Files(self) -> List: ...
+    @Files.setter
+    def Files(self, value: List) -> None: ...

@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class NetworkOptionsGPOSettings(PolicyMakerElement):
+    def __init__(self): ...
+    @property
+    def NetworkOptionsSettingsList(self) -> Collection: ...
+    @NetworkOptionsSettingsList.setter
+    def NetworkOptionsSettingsList(self, value: Collection) -> None: ...

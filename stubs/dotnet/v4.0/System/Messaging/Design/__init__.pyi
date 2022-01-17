@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class QueuePathEditor(UITypeEditor):
+    def __init__(self): ...
+    @overload
+    def EditValue(self, context: ITypeDescriptorContext, provider: IServiceProvider, value: Object) -> Object: ...
+    @overload
+    def GetEditStyle(self, context: ITypeDescriptorContext) -> UITypeEditorEditStyle: ...

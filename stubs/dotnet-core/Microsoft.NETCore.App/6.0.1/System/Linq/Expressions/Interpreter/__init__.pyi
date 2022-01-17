@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class LightLambda(Object):
+    def Run(self, arguments: Set(Object)) -> Object: ...
+    def RunVoid(self, arguments: Set(Object)) -> Object: ...

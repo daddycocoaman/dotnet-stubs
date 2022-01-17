@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class RuntimeHelpers:
+    @overload
+    def CreateInferredEventCallback(receiver: Object, callback: Action, value: T) -> EventCallback: ...
+    @overload
+    def CreateInferredEventCallback(receiver: Object, callback: Func, value: T) -> EventCallback: ...
+    def TypeCheck(value: T) -> T: ...

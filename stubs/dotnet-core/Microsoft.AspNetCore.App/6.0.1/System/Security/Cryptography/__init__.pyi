@@ -1,0 +1,9 @@
+__all__ = ['Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Pkcs','Xml']
+from typing import Tuple, Set, Iterable, List
+
+
+class CryptographicAttributeObjectEnumerator(Object):
+    @property
+    def Current(self) -> CryptographicAttributeObject: ...
+    def MoveNext(self) -> bool: ...
+    def Reset(self) -> None: ...

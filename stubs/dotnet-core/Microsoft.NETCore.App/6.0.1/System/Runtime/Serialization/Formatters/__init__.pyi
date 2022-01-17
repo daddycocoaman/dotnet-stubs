@@ -1,0 +1,13 @@
+__all__ = ['Binary']
+from typing import Tuple, Set, Iterable, List
+
+
+class IFieldInfo:
+    @property
+    def FieldNames(self) -> Set(str): ...
+    @property
+    def FieldTypes(self) -> Set(Type): ...
+    @FieldNames.setter
+    def FieldNames(self, value: Set(str)) -> None: ...
+    @FieldTypes.setter
+    def FieldTypes(self, value: Set(Type)) -> None: ...

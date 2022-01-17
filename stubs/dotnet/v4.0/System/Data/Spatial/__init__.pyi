@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class DbSpatialDataReader(Object):
+    def GetGeography(self, ordinal: int) -> DbGeography: ...
+    def GetGeometry(self, ordinal: int) -> DbGeometry: ...

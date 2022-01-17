@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class RequestLocalizationMiddleware:
+    def __init__(self, next: RequestDelegate, options: IOptions, loggerFactory: ILoggerFactory): ...
+    def Invoke(self, context: HttpContext) -> Task: ...

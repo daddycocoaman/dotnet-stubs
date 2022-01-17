@@ -1,0 +1,9 @@
+__all__ = ['Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335','Ecma335']
+from typing import Tuple, Set, Iterable, List
+
+
+class TypeSpecification(ValueType):
+    def DecodeSignature(self, provider: ISignatureTypeProvider, genericContext: TGenericContext) -> TType: ...
+    @property
+    def Signature(self) -> BlobHandle: ...
+    def GetCustomAttributes(self) -> CustomAttributeHandleCollection: ...

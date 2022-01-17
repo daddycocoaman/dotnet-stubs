@@ -1,0 +1,9 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class TrustedServerGroupSettings(PolicySetting):
+    def __init__(self): ...
+    @property
+    def TrustedServerGroupType(self) -> Set(TrustedServerGroupType): ...
+    @TrustedServerGroupType.setter
+    def TrustedServerGroupType(self, value: Set(TrustedServerGroupType)) -> None: ...

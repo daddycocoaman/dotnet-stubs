@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class Annotation(Object):
+    def GetAnnotationText(instance: Object) -> str: ...
+    def SetAnnotationText(instance: Object, annotationText: str) -> None: ...

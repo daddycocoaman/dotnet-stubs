@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class Environment:
+    def __init__(self): ...
+    def GetWindowsDirectory() -> str: ...
