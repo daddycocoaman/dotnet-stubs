@@ -1,6 +1,11 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class HostFilteringMiddleware:
+    def __init__(self, next: RequestDelegate, logger: ILogger, optionsMonitor: IOptionsMonitor): ...
+    def Invoke(self, context: HttpContext) -> Task: ...
+
+
 class HostFilteringOptions:
     def __init__(self): ...
     @property

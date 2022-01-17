@@ -1,6 +1,92 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class MemoryMappedFile(Object):
+    @overload
+    def CreateFromFile(path: str) -> MemoryMappedFile: ...
+    @overload
+    def CreateFromFile(path: str, mode: FileMode) -> MemoryMappedFile: ...
+    @overload
+    def CreateFromFile(path: str, mode: FileMode, mapName: str) -> MemoryMappedFile: ...
+    @overload
+    def CreateFromFile(path: str, mode: FileMode, mapName: str, capacity: Int64) -> MemoryMappedFile: ...
+    @overload
+    def CreateFromFile(path: str, mode: FileMode, mapName: str, capacity: Int64, access: MemoryMappedFileAccess) -> MemoryMappedFile: ...
+    @overload
+    def CreateFromFile(fileStream: FileStream, mapName: str, capacity: Int64, access: MemoryMappedFileAccess, inheritability: HandleInheritability, leaveOpen: bool) -> MemoryMappedFile: ...
+    @overload
+    def CreateNew(mapName: str, capacity: Int64) -> MemoryMappedFile: ...
+    @overload
+    def CreateNew(mapName: str, capacity: Int64, access: MemoryMappedFileAccess) -> MemoryMappedFile: ...
+    @overload
+    def CreateNew(mapName: str, capacity: Int64, access: MemoryMappedFileAccess, options: MemoryMappedFileOptions, inheritability: HandleInheritability) -> MemoryMappedFile: ...
+    @overload
+    def CreateOrOpen(mapName: str, capacity: Int64) -> MemoryMappedFile: ...
+    @overload
+    def CreateOrOpen(mapName: str, capacity: Int64, access: MemoryMappedFileAccess) -> MemoryMappedFile: ...
+    @overload
+    def CreateOrOpen(mapName: str, capacity: Int64, access: MemoryMappedFileAccess, options: MemoryMappedFileOptions, inheritability: HandleInheritability) -> MemoryMappedFile: ...
+    @overload
+    def CreateViewAccessor(self) -> MemoryMappedViewAccessor: ...
+    @overload
+    def CreateViewAccessor(self, offset: Int64, size: Int64) -> MemoryMappedViewAccessor: ...
+    @overload
+    def CreateViewAccessor(self, offset: Int64, size: Int64, access: MemoryMappedFileAccess) -> MemoryMappedViewAccessor: ...
+    @overload
+    def CreateViewStream(self) -> MemoryMappedViewStream: ...
+    @overload
+    def CreateViewStream(self, offset: Int64, size: Int64) -> MemoryMappedViewStream: ...
+    @overload
+    def CreateViewStream(self, offset: Int64, size: Int64, access: MemoryMappedFileAccess) -> MemoryMappedViewStream: ...
+    def Dispose(self) -> None: ...
+    @property
+    def SafeMemoryMappedFileHandle(self) -> SafeMemoryMappedFileHandle: ...
+    @overload
+    def OpenExisting(mapName: str) -> MemoryMappedFile: ...
+    @overload
+    def OpenExisting(mapName: str, desiredAccessRights: MemoryMappedFileRights) -> MemoryMappedFile: ...
+    @overload
+    def OpenExisting(mapName: str, desiredAccessRights: MemoryMappedFileRights, inheritability: HandleInheritability) -> MemoryMappedFile: ...
+
+
+class MemoryMappedFileAccess:
+    ReadWrite = 0
+    Read = 1
+    Write = 2
+    CopyOnWrite = 3
+    ReadExecute = 4
+    ReadWriteExecute = 5
+
+
+class MemoryMappedFileOptions:
+    #None = 0
+    DelayAllocatePages = 67108864
+
+
+class MemoryMappedFileRights:
+    CopyOnWrite = 1
+    Write = 2
+    Read = 4
+    ReadWrite = 6
+    Execute = 8
+    ReadExecute = 12
+    ReadWriteExecute = 14
+    Delete = 65536
+    ReadPermissions = 131072
+    ChangePermissions = 262144
+    TakeOwnership = 524288
+    FullControl = 983055
+    AccessSystemSecurity = 16777216
+
+
+class MemoryMappedViewAccessor(UnmanagedMemoryAccessor):
+    def Flush(self) -> None: ...
+    @property
+    def PointerOffset(self) -> Int64: ...
+    @property
+    def SafeMemoryMappedViewHandle(self) -> SafeMemoryMappedViewHandle: ...
+
+
 class MemoryMappedViewStream(UnmanagedMemoryStream):
     def Flush(self) -> None: ...
     @property

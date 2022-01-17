@@ -1,6 +1,21 @@
 from typing import Tuple, Set, Iterable, List
 
 
+
+
+
+
+
+
+
+
+class EnumerablePartitionerOptions:
+    #None = 0
+    NoBuffering = 1
+
+
+
+
 class Partitioner(Object):
     @overload
     def Create(source: Iterable[TSource]) -> OrderablePartitioner: ...
@@ -18,3 +33,5 @@ class Partitioner(Object):
     def Create(fromInclusive: Int64, toExclusive: Int64, rangeSize: Int64) -> OrderablePartitioner: ...
     @overload
     def Create(fromInclusive: int, toExclusive: int, rangeSize: int) -> OrderablePartitioner: ...
+
+

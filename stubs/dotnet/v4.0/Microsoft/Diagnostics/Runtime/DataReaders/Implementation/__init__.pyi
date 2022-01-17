@@ -1,0 +1,6 @@
+from typing import Tuple, Set, Iterable, List
+
+
+class IThreadReader:
+    def EnumerateOSThreadIds(self) -> Iterable[UInt32]: ...
+    def GetThreadTeb(self, osThreadId: UInt32) -> UInt64: ...

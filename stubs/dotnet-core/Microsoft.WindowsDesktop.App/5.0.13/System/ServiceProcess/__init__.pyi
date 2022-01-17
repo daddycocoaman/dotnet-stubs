@@ -1,6 +1,25 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class ServiceControllerPermissionAccess:
+    #None = 0
+    Browse = 2
+    Control = 6
+
+
+class ServiceControllerPermissionEntry(Object):
+    @overload
+    def __init__(self): ...
+    @overload
+    def __init__(self, permissionAccess: ServiceControllerPermissionAccess, machineName: str, serviceName: str): ...
+    @property
+    def MachineName(self) -> str: ...
+    @property
+    def PermissionAccess(self) -> ServiceControllerPermissionAccess: ...
+    @property
+    def ServiceName(self) -> str: ...
+
+
 class ServiceControllerPermissionEntryCollection(CollectionBase):
     def Add(self, value: ServiceControllerPermissionEntry) -> int: ...
     @overload

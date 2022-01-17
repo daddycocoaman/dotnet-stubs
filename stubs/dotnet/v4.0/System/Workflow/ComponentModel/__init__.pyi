@@ -1,5 +1,12 @@
-__all__ = ['Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Compiler','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Design','Serialization','Serialization','Serialization','Serialization','Serialization','Serialization','Serialization','Serialization','Serialization','Serialization','Serialization','Serialization','Serialization','Serialization','Serialization','Serialization']
+__all__ = ['Compiler','Design','Serialization']
 from typing import Tuple, Set, Iterable, List
+
+
+class GetValueOverride(MulticastDelegate):
+    def __init__(self, object: Object, method: IntPtr): ...
+    def BeginInvoke(self, d: DependencyObject, callback: AsyncCallback, object: Object) -> IAsyncResult: ...
+    def EndInvoke(self, result: IAsyncResult) -> Object: ...
+    def Invoke(self, d: DependencyObject) -> Object: ...
 
 
 class SetValueOverride(MulticastDelegate):

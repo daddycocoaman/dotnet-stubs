@@ -1,5 +1,57 @@
-__all__ = ['Xml','Xml']
+__all__ = ['Xml']
 from typing import Tuple, Set, Iterable, List
+
+
+class BehaviorOnNoMatch:
+    Default = 0
+    ReportErrors = 1
+    SilentlyContinue = 2
+
+
+
+
+class MethodInvocationInfo:
+    def __init__(self, name: str, parameters: Iterable[MethodParameter], returnValue: MethodParameter): ...
+    @property
+    def MethodName(self) -> str: ...
+    @property
+    def Parameters(self) -> KeyedCollection: ...
+    @property
+    def ReturnValue(self) -> MethodParameter: ...
+
+
+class MethodParameter:
+    def __init__(self): ...
+    @property
+    def Bindings(self) -> MethodParameterBindings: ...
+    @property
+    def IsValuePresent(self) -> bool: ...
+    @property
+    def Name(self) -> str: ...
+    @property
+    def ParameterType(self) -> Type: ...
+    @property
+    def ParameterTypeName(self) -> str: ...
+    @property
+    def Value(self) -> Object: ...
+    @Bindings.setter
+    def Bindings(self, value: MethodParameterBindings) -> None: ...
+    @IsValuePresent.setter
+    def IsValuePresent(self, value: bool) -> None: ...
+    @Name.setter
+    def Name(self, value: str) -> None: ...
+    @ParameterType.setter
+    def ParameterType(self, value: Type) -> None: ...
+    @ParameterTypeName.setter
+    def ParameterTypeName(self, value: str) -> None: ...
+    @Value.setter
+    def Value(self, value: Object) -> None: ...
+
+
+class MethodParameterBindings:
+    In = 1
+    Out = 2
+    Error = 4
 
 
 class QueryBuilder:

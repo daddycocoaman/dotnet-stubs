@@ -14,3 +14,9 @@ class ServiceInstallerDialog(Form):
     def Password(self, value: str) -> None: ...
     @Username.setter
     def Username(self, value: str) -> None: ...
+
+
+class ServiceInstallerDialogResult:
+    OK = 0
+    UseSystem = 1
+    Canceled = 2

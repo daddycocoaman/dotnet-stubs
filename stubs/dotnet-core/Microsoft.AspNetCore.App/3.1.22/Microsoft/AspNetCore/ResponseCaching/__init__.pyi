@@ -1,6 +1,19 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class ResponseCachingFeature:
+    def __init__(self): ...
+    @property
+    def VaryByQueryKeys(self) -> Set(str): ...
+    @VaryByQueryKeys.setter
+    def VaryByQueryKeys(self, value: Set(str)) -> None: ...
+
+
+class ResponseCachingMiddleware:
+    def __init__(self, next: RequestDelegate, options: IOptions, loggerFactory: ILoggerFactory, poolProvider: ObjectPoolProvider): ...
+    def Invoke(self, httpContext: HttpContext) -> Task: ...
+
+
 class ResponseCachingOptions:
     def __init__(self): ...
     @property

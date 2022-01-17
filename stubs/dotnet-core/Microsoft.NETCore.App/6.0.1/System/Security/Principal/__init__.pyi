@@ -1,6 +1,297 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class IdentityNotMappedException(SystemException):
+    @overload
+    def __init__(self): ...
+    @overload
+    def __init__(self, message: str): ...
+    @overload
+    def __init__(self, message: str, inner: Exception): ...
+    @property
+    def UnmappedIdentities(self) -> IdentityReferenceCollection: ...
+    def GetObjectData(self, serializationInfo: SerializationInfo, streamingContext: StreamingContext) -> None: ...
+
+
+class IdentityReference(Object):
+    def Equals(self, o: Object) -> bool: ...
+    @property
+    def Value(self) -> str: ...
+    def GetHashCode(self) -> int: ...
+    def IsValidTargetType(self, targetType: Type) -> bool: ...
+    def op_Equality(left: IdentityReference, right: IdentityReference) -> bool: ...
+    def op_Inequality(left: IdentityReference, right: IdentityReference) -> bool: ...
+    def ToString(self) -> str: ...
+    def Translate(self, targetType: Type) -> IdentityReference: ...
+
+
+class IdentityReferenceCollection(Object):
+    @overload
+    def __init__(self): ...
+    @overload
+    def __init__(self, capacity: int): ...
+    def Add(self, identity: IdentityReference) -> None: ...
+    def Clear(self) -> None: ...
+    def Contains(self, identity: IdentityReference) -> bool: ...
+    def CopyTo(self, array: Set(IdentityReference), offset: int) -> None: ...
+    @property
+    def Count(self) -> int: ...
+    @property
+    def Item(self, index: int) -> IdentityReference: ...
+    def GetEnumerator(self) -> IEnumerator: ...
+    def Remove(self, identity: IdentityReference) -> bool: ...
+    @Item.setter
+    def Item(self, index: int, value: IdentityReference) -> None: ...
+    @overload
+    def Translate(self, targetType: Type) -> IdentityReferenceCollection: ...
+    @overload
+    def Translate(self, targetType: Type, forceSuccess: bool) -> IdentityReferenceCollection: ...
+
+
+class NTAccount(IdentityReference):
+    @overload
+    def __init__(self, name: str): ...
+    @overload
+    def __init__(self, domainName: str, accountName: str): ...
+    def Equals(self, o: Object) -> bool: ...
+    @property
+    def Value(self) -> str: ...
+    def GetHashCode(self) -> int: ...
+    def IsValidTargetType(self, targetType: Type) -> bool: ...
+    def op_Equality(left: NTAccount, right: NTAccount) -> bool: ...
+    def op_Inequality(left: NTAccount, right: NTAccount) -> bool: ...
+    def ToString(self) -> str: ...
+    def Translate(self, targetType: Type) -> IdentityReference: ...
+
+
+class SecurityIdentifier(IdentityReference):
+    @overload
+    def __init__(self, sddlForm: str): ...
+    @overload
+    def __init__(self, binaryForm: IntPtr): ...
+    @overload
+    def __init__(self, binaryForm: Set(Byte), offset: int): ...
+    @overload
+    def __init__(self, sidType: WellKnownSidType, domainSid: SecurityIdentifier): ...
+    def CompareTo(self, sid: SecurityIdentifier) -> int: ...
+    @overload
+    def Equals(self, o: Object) -> bool: ...
+    @overload
+    def Equals(self, sid: SecurityIdentifier) -> bool: ...
+    @property
+    def AccountDomainSid(self) -> SecurityIdentifier: ...
+    @property
+    def BinaryLength(self) -> int: ...
+    @property
+    def Value(self) -> str: ...
+    def GetBinaryForm(self, binaryForm: Set(Byte), offset: int) -> None: ...
+    def GetHashCode(self) -> int: ...
+    def IsAccountSid(self) -> bool: ...
+    def IsEqualDomainSid(self, sid: SecurityIdentifier) -> bool: ...
+    def IsValidTargetType(self, targetType: Type) -> bool: ...
+    def IsWellKnown(self, type: WellKnownSidType) -> bool: ...
+    def op_Equality(left: SecurityIdentifier, right: SecurityIdentifier) -> bool: ...
+    def op_Inequality(left: SecurityIdentifier, right: SecurityIdentifier) -> bool: ...
+    def ToString(self) -> str: ...
+    def Translate(self, targetType: Type) -> IdentityReference: ...
+
+
+class TokenAccessLevels:
+    AssignPrimary = 1
+    Duplicate = 2
+    Impersonate = 4
+    Query = 8
+    QuerySource = 16
+    AdjustPrivileges = 32
+    AdjustGroups = 64
+    AdjustDefault = 128
+    AdjustSessionId = 256
+    Read = 131080
+    Write = 131296
+    AllAccess = 983551
+    MaximumAllowed = 33554432
+
+
+class WellKnownSidType:
+    NullSid = 0
+    WorldSid = 1
+    LocalSid = 2
+    CreatorOwnerSid = 3
+    CreatorGroupSid = 4
+    CreatorOwnerServerSid = 5
+    CreatorGroupServerSid = 6
+    NTAuthoritySid = 7
+    DialupSid = 8
+    NetworkSid = 9
+    BatchSid = 10
+    InteractiveSid = 11
+    ServiceSid = 12
+    AnonymousSid = 13
+    ProxySid = 14
+    EnterpriseControllersSid = 15
+    SelfSid = 16
+    AuthenticatedUserSid = 17
+    RestrictedCodeSid = 18
+    TerminalServerSid = 19
+    RemoteLogonIdSid = 20
+    LogonIdsSid = 21
+    LocalSystemSid = 22
+    LocalServiceSid = 23
+    NetworkServiceSid = 24
+    BuiltinDomainSid = 25
+    BuiltinAdministratorsSid = 26
+    BuiltinUsersSid = 27
+    BuiltinGuestsSid = 28
+    BuiltinPowerUsersSid = 29
+    BuiltinAccountOperatorsSid = 30
+    BuiltinSystemOperatorsSid = 31
+    BuiltinPrintOperatorsSid = 32
+    BuiltinBackupOperatorsSid = 33
+    BuiltinReplicatorSid = 34
+    BuiltinPreWindows2000CompatibleAccessSid = 35
+    BuiltinRemoteDesktopUsersSid = 36
+    BuiltinNetworkConfigurationOperatorsSid = 37
+    AccountAdministratorSid = 38
+    AccountGuestSid = 39
+    AccountKrbtgtSid = 40
+    AccountDomainAdminsSid = 41
+    AccountDomainUsersSid = 42
+    AccountDomainGuestsSid = 43
+    AccountComputersSid = 44
+    AccountControllersSid = 45
+    AccountCertAdminsSid = 46
+    AccountSchemaAdminsSid = 47
+    AccountEnterpriseAdminsSid = 48
+    AccountPolicyAdminsSid = 49
+    AccountRasAndIasServersSid = 50
+    NtlmAuthenticationSid = 51
+    DigestAuthenticationSid = 52
+    SChannelAuthenticationSid = 53
+    ThisOrganizationSid = 54
+    OtherOrganizationSid = 55
+    BuiltinIncomingForestTrustBuildersSid = 56
+    BuiltinPerformanceMonitoringUsersSid = 57
+    BuiltinPerformanceLoggingUsersSid = 58
+    BuiltinAuthorizationAccessSid = 59
+    WinBuiltinTerminalServerLicenseServersSid = 60
+    MaxDefined = 60
+    WinBuiltinDCOMUsersSid = 61
+    WinBuiltinIUsersSid = 62
+    WinIUserSid = 63
+    WinBuiltinCryptoOperatorsSid = 64
+    WinUntrustedLabelSid = 65
+    WinLowLabelSid = 66
+    WinMediumLabelSid = 67
+    WinHighLabelSid = 68
+    WinSystemLabelSid = 69
+    WinWriteRestrictedCodeSid = 70
+    WinCreatorOwnerRightsSid = 71
+    WinCacheablePrincipalsGroupSid = 72
+    WinNonCacheablePrincipalsGroupSid = 73
+    WinEnterpriseReadonlyControllersSid = 74
+    WinAccountReadonlyControllersSid = 75
+    WinBuiltinEventLogReadersGroup = 76
+    WinNewEnterpriseReadonlyControllersSid = 77
+    WinBuiltinCertSvcDComAccessGroup = 78
+    WinMediumPlusLabelSid = 79
+    WinLocalLogonSid = 80
+    WinConsoleLogonSid = 81
+    WinThisOrganizationCertificateSid = 82
+    WinApplicationPackageAuthoritySid = 83
+    WinBuiltinAnyPackageSid = 84
+    WinCapabilityInternetClientSid = 85
+    WinCapabilityInternetClientServerSid = 86
+    WinCapabilityPrivateNetworkClientServerSid = 87
+    WinCapabilityPicturesLibrarySid = 88
+    WinCapabilityVideosLibrarySid = 89
+    WinCapabilityMusicLibrarySid = 90
+    WinCapabilityDocumentsLibrarySid = 91
+    WinCapabilitySharedUserCertificatesSid = 92
+    WinCapabilityEnterpriseAuthenticationSid = 93
+    WinCapabilityRemovableStorageSid = 94
+
+
+class WindowsAccountType:
+    Normal = 0
+    Guest = 1
+    System = 2
+    Anonymous = 3
+
+
+class WindowsBuiltInRole:
+    Administrator = 544
+    User = 545
+    Guest = 546
+    PowerUser = 547
+    AccountOperator = 548
+    SystemOperator = 549
+    PrintOperator = 550
+    BackupOperator = 551
+    Replicator = 552
+
+
+class WindowsIdentity(ClaimsIdentity):
+    @overload
+    def __init__(self, userToken: IntPtr): ...
+    @overload
+    def __init__(self, sUserPrincipalName: str): ...
+    @overload
+    def __init__(self, userToken: IntPtr, type: str): ...
+    @overload
+    def __init__(self, info: SerializationInfo, context: StreamingContext): ...
+    @overload
+    def __init__(self, userToken: IntPtr, type: str, acctType: WindowsAccountType): ...
+    @overload
+    def __init__(self, userToken: IntPtr, type: str, acctType: WindowsAccountType, isAuthenticated: bool): ...
+    def Clone(self) -> ClaimsIdentity: ...
+    def Dispose(self) -> None: ...
+    @property
+    def AccessToken(self) -> SafeAccessTokenHandle: ...
+    @property
+    def AuthenticationType(self) -> str: ...
+    @property
+    def Claims(self) -> Iterable[Claim]: ...
+    @property
+    def DeviceClaims(self) -> Iterable[Claim]: ...
+    @property
+    def Groups(self) -> IdentityReferenceCollection: ...
+    @property
+    def ImpersonationLevel(self) -> TokenImpersonationLevel: ...
+    @property
+    def IsAnonymous(self) -> bool: ...
+    @property
+    def IsAuthenticated(self) -> bool: ...
+    @property
+    def IsGuest(self) -> bool: ...
+    @property
+    def IsSystem(self) -> bool: ...
+    @property
+    def Name(self) -> str: ...
+    @property
+    def Owner(self) -> SecurityIdentifier: ...
+    @property
+    def Token(self) -> IntPtr: ...
+    @property
+    def User(self) -> SecurityIdentifier: ...
+    @property
+    def UserClaims(self) -> Iterable[Claim]: ...
+    def GetAnonymous() -> WindowsIdentity: ...
+    @overload
+    def GetCurrent() -> WindowsIdentity: ...
+    @overload
+    def GetCurrent(desiredAccess: TokenAccessLevels) -> WindowsIdentity: ...
+    @overload
+    def GetCurrent(ifImpersonating: bool) -> WindowsIdentity: ...
+    @overload
+    def RunImpersonated(safeAccessTokenHandle: SafeAccessTokenHandle, func: Func) -> T: ...
+    @overload
+    def RunImpersonated(safeAccessTokenHandle: SafeAccessTokenHandle, action: Action) -> None: ...
+    @overload
+    def RunImpersonatedAsync(safeAccessTokenHandle: SafeAccessTokenHandle, func: Func) -> Task: ...
+    @overload
+    def RunImpersonatedAsync(safeAccessTokenHandle: SafeAccessTokenHandle, func: Func) -> Task: ...
+
+
 class WindowsPrincipal(ClaimsPrincipal):
     def __init__(self, ntIdentity: WindowsIdentity): ...
     @property

@@ -2,6 +2,22 @@ __all__ = ['Abstractions','Features']
 from typing import Tuple, Set, Iterable, List
 
 
+
+
+class IServer:
+    @property
+    def Features(self) -> IFeatureCollection: ...
+    def StartAsync(self, application: IHttpApplication, cancellationToken: CancellationToken) -> Task: ...
+    def StopAsync(self, cancellationToken: CancellationToken) -> Task: ...
+
+
+class IServerIntegratedAuth:
+    @property
+    def AuthenticationScheme(self) -> str: ...
+    @property
+    def IsEnabled(self) -> bool: ...
+
+
 class ServerIntegratedAuth:
     def __init__(self): ...
     @property

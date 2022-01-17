@@ -1,5 +1,23 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class ProtectedBrowserStorage:
+    def DeleteAsync(self, key: str) -> ValueTask: ...
+    @overload
+    def GetAsync(self, key: str) -> ValueTask: ...
+    @overload
+    def GetAsync(self, purpose: str, key: str) -> ValueTask: ...
+    @overload
+    def SetAsync(self, key: str, value: Object) -> ValueTask: ...
+    @overload
+    def SetAsync(self, purpose: str, key: str, value: Object) -> ValueTask: ...
+
+
+
+
+class ProtectedLocalStorage(ProtectedBrowserStorage):
+    def __init__(self, jsRuntime: IJSRuntime, dataProtectionProvider: IDataProtectionProvider): ...
+
+
 class ProtectedSessionStorage(ProtectedBrowserStorage):
     def __init__(self, jsRuntime: IJSRuntime, dataProtectionProvider: IDataProtectionProvider): ...

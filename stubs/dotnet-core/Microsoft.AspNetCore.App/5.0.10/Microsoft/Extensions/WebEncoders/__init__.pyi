@@ -1,4 +1,4 @@
-__all__ = ['Testing','Testing','Testing']
+__all__ = ['Testing']
 from typing import Tuple, Set, Iterable, List
 
 

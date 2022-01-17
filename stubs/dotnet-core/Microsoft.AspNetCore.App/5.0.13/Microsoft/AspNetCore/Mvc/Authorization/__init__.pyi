@@ -1,6 +1,10 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class AllowAnonymousFilter:
+    def __init__(self): ...
+
+
 class AuthorizeFilter:
     @overload
     def __init__(self): ...

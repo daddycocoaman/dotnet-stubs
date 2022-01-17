@@ -1,6 +1,15 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class RemoteInstallationSetting(PolicySetting):
+    def __init__(self): ...
+    @property
+    def Value(self) -> SetupStateType: ...
+    @Value.setter
+    def Value(self, value: SetupStateType) -> None: ...
+    def SetValue(self, value: Int64) -> None: ...
+
+
 class RemoteInstallationSettings(GPOExtension):
     def __init__(self): ...
     @property
@@ -20,3 +29,9 @@ class RemoteInstallationSettings(GPOExtension):
     def RestartSetupSetting(self, value: RemoteInstallationSetting) -> None: ...
     @ToolsSetting.setter
     def ToolsSetting(self, value: RemoteInstallationSetting) -> None: ...
+
+
+class SetupStateType:
+    NotConfigured = 0
+    Disabled = 1
+    Enabled = 2

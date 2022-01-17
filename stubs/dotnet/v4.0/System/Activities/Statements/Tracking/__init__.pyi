@@ -1,6 +1,12 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class StateMachineStateQuery(CustomTrackingQuery):
+    def __init__(self): ...
+    @property
+    def Name(self) -> str: ...
+
+
 class StateMachineStateRecord(CustomTrackingRecord):
     def __init__(self): ...
     @property

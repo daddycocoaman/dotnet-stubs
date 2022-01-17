@@ -1,4 +1,4 @@
-__all__ = ['Mail','Mail','Mail','NetworkInformation','NetworkInformation','NetworkInformation','PeerToPeer','PeerToPeer','PeerToPeer']
+__all__ = ['Mail','NetworkInformation','PeerToPeer']
 from typing import Tuple, Set, Iterable, List
 
 
@@ -11,3 +11,16 @@ class EndpointPermission(Object):
     @property
     def Transport(self) -> TransportType: ...
     def GetHashCode(self) -> int: ...
+
+
+class NetworkAccess:
+    Connect = 64
+    Accept = 128
+
+
+class TransportType:
+    Udp = 1
+    Connectionless = 1
+    ConnectionOriented = 2
+    Tcp = 2
+    All = 3

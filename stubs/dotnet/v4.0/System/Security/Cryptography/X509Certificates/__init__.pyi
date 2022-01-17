@@ -10,3 +10,8 @@ class X509Certificate2UI(Object):
     def SelectFromCollection(certificates: X509Certificate2Collection, title: str, message: str, selectionFlag: X509SelectionFlag) -> X509Certificate2Collection: ...
     @overload
     def SelectFromCollection(certificates: X509Certificate2Collection, title: str, message: str, selectionFlag: X509SelectionFlag, hwndParent: IntPtr) -> X509Certificate2Collection: ...
+
+
+class X509SelectionFlag:
+    SingleSelection = 0
+    MultiSelection = 1

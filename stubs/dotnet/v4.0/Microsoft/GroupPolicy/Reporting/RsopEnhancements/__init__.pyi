@@ -1,6 +1,62 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class CrimsonEventRecord:
+    def __init__(self): ...
+    @property
+    def EventDescription(self) -> str: ...
+    @property
+    def EventXml(self) -> str: ...
+    @EventDescription.setter
+    def EventDescription(self, value: str) -> None: ...
+    @EventXml.setter
+    def EventXml(self, value: str) -> None: ...
+
+
+class ExtensionProcessingTime:
+    def __init__(self): ...
+    @property
+    def ElapsedTimeInMilliseconds(self) -> Int64: ...
+    @property
+    def ExtensionGuid(self) -> str: ...
+    @property
+    def ExtensionName(self) -> str: ...
+    @property
+    def ProcessedTimeStamp(self) -> DateTime: ...
+    @ElapsedTimeInMilliseconds.setter
+    def ElapsedTimeInMilliseconds(self, value: Int64) -> None: ...
+    @ExtensionGuid.setter
+    def ExtensionGuid(self, value: str) -> None: ...
+    @ExtensionName.setter
+    def ExtensionName(self, value: str) -> None: ...
+    @ProcessedTimeStamp.setter
+    def ProcessedTimeStamp(self, value: DateTime) -> None: ...
+
+
+class PolicyApplicationMode:
+    Background = 0
+    ForegroundSync = 1
+    ForegroundAsync = 2
+    Invalid = -1
+
+
+class PolicyApplicationTrigger:
+    Boot = 0
+    LogOn = 1
+    NetworkStateChange = 2
+    Manual = 3
+    Periodic = 4
+    Invalid = -1
+
+
+class PolicyEventsDetails:
+    def __init__(self): ...
+    @property
+    def SinglePassEventsDetails(self) -> Set(SinglePassEventsDetails): ...
+    @SinglePassEventsDetails.setter
+    def SinglePassEventsDetails(self, value: Set(SinglePassEventsDetails)) -> None: ...
+
+
 class SinglePassEventsDetails:
     def __init__(self): ...
     @property

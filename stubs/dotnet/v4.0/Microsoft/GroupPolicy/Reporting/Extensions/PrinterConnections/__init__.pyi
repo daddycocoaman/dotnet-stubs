@@ -1,6 +1,14 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class PrinterConnectionSetting(PolicySetting):
+    def __init__(self): ...
+    @property
+    def Path(self) -> str: ...
+    @Path.setter
+    def Path(self, value: str) -> None: ...
+
+
 class PrinterConnectionSettings(GPOExtension):
     def __init__(self): ...
     @property

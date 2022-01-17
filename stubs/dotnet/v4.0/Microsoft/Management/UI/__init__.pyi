@@ -1,5 +1,10 @@
-__all__ = ['Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal','Internal']
+__all__ = ['Internal']
 from typing import Tuple, Set, Iterable, List
+
+
+class HelpWindow:
+    def __init__(self, helpObject: PSObject): ...
+    def InitializeComponent(self) -> None: ...
 
 
 class SettingsDialog:

@@ -8,3 +8,45 @@ class CollectionExtensions(Object):
     def GetValueOrDefault(dictionary: IReadOnlyDictionary, key: TKey, defaultValue: TValue) -> TValue: ...
     def Remove(dictionary: IDictionary, key: TKey) -> Tuple[bool, TValue]: ...
     def TryAdd(dictionary: IDictionary, key: TKey, value: TValue) -> bool: ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

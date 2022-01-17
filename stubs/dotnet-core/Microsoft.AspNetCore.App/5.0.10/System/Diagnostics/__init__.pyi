@@ -1,6 +1,59 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class EventLogPermissionAccess:
+    #None = 0
+    Browse = 2
+    Instrument = 6
+    Audit = 10
+    Write = 16
+    Administer = 48
+
+
+class EventLogPermissionEntry(Object):
+    def __init__(self, permissionAccess: EventLogPermissionAccess, machineName: str): ...
+    @property
+    def MachineName(self) -> str: ...
+    @property
+    def PermissionAccess(self) -> EventLogPermissionAccess: ...
+
+
+class EventLogPermissionEntryCollection(CollectionBase):
+    def Add(self, value: EventLogPermissionEntry) -> int: ...
+    @overload
+    def AddRange(self, value: EventLogPermissionEntryCollection) -> None: ...
+    @overload
+    def AddRange(self, value: Set(EventLogPermissionEntry)) -> None: ...
+    def Contains(self, value: EventLogPermissionEntry) -> bool: ...
+    def CopyTo(self, array: Set(EventLogPermissionEntry), index: int) -> None: ...
+    @property
+    def Item(self, index: int) -> EventLogPermissionEntry: ...
+    def IndexOf(self, value: EventLogPermissionEntry) -> int: ...
+    def Insert(self, index: int, value: EventLogPermissionEntry) -> None: ...
+    def Remove(self, value: EventLogPermissionEntry) -> None: ...
+    @Item.setter
+    def Item(self, index: int, value: EventLogPermissionEntry) -> None: ...
+
+
+class PerformanceCounterPermissionAccess:
+    #None = 0
+    Browse = 1
+    Read = 1
+    Write = 2
+    Instrument = 3
+    Administer = 7
+
+
+class PerformanceCounterPermissionEntry(Object):
+    def __init__(self, permissionAccess: PerformanceCounterPermissionAccess, machineName: str, categoryName: str): ...
+    @property
+    def CategoryName(self) -> str: ...
+    @property
+    def MachineName(self) -> str: ...
+    @property
+    def PermissionAccess(self) -> PerformanceCounterPermissionAccess: ...
+
+
 class PerformanceCounterPermissionEntryCollection(CollectionBase):
     def Add(self, value: PerformanceCounterPermissionEntry) -> int: ...
     @overload

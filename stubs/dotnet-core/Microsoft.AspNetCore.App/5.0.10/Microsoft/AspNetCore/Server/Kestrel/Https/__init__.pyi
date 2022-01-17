@@ -1,6 +1,16 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class CertificateLoader:
+    def LoadFromStoreCert(subject: str, storeName: str, storeLocation: StoreLocation, allowInvalid: bool) -> X509Certificate2: ...
+
+
+class ClientCertificateMode:
+    NoCertificate = 0
+    AllowCertificate = 1
+    RequireCertificate = 2
+
+
 class HttpsConnectionAdapterOptions:
     def __init__(self): ...
     def AllowAnyClientCertificate(self) -> None: ...

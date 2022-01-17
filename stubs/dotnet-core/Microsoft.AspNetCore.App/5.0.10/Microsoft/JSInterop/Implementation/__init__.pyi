@@ -1,6 +1,11 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class JSInProcessObjectReference(JSObjectReference):
+    def Dispose(self) -> None: ...
+    def Invoke(self, identifier: str, args: Set(Object)) -> TValue: ...
+
+
 class JSObjectReference:
     def DisposeAsync(self) -> ValueTask: ...
     @overload

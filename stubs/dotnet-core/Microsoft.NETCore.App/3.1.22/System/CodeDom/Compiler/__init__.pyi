@@ -1,9 +1,0 @@
-from typing import Tuple, Set, Iterable, List
-
-
-class GeneratedCodeAttribute(Attribute):
-    def __init__(self, tool: str, version: str): ...
-    @property
-    def Tool(self) -> str: ...
-    @property
-    def Version(self) -> str: ...

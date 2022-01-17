@@ -1,9 +1,9 @@
-__all__ = ['AccessControl','AccessControl','AccessControl','AccessControl','Authentication','Authentication','Authentication','Authentication','Authentication','Authentication','Claims','Cryptography','Cryptography','Cryptography','Cryptography','Cryptography','Cryptography','Cryptography','Permissions','Permissions','Permissions','Permissions','Permissions','Permissions','Permissions','Permissions']
+__all__ = ['Cryptography']
 from typing import Tuple, Set, Iterable, List
 
 
-class SecureStringMarshal(Object):
-    def SecureStringToCoTaskMemAnsi(s: SecureString) -> IntPtr: ...
-    def SecureStringToCoTaskMemUnicode(s: SecureString) -> IntPtr: ...
-    def SecureStringToGlobalAllocAnsi(s: SecureString) -> IntPtr: ...
-    def SecureStringToGlobalAllocUnicode(s: SecureString) -> IntPtr: ...
+class ManifestKinds:
+    #None = 0
+    Deployment = 1
+    Application = 2
+    ApplicationAndDeployment = 3

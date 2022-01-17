@@ -1,6 +1,10 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class ISupportsConfigureWebHost:
+    def ConfigureWebHost(self, configure: Action, configureOptions: Action) -> IHostBuilder: ...
+
+
 class ISupportsStartup:
     @overload
     def Configure(self, configure: Action) -> IWebHostBuilder: ...

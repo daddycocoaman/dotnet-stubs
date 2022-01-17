@@ -2,6 +2,23 @@ __all__ = ['SafeHandles']
 from typing import Tuple, Set, Iterable, List
 
 
+class Registry:
+    def GetValue(keyName: str, valueName: str, defaultValue: Object) -> Object: ...
+    @overload
+    def SetValue(keyName: str, valueName: str, value: Object) -> None: ...
+    @overload
+    def SetValue(keyName: str, valueName: str, value: Object, valueKind: RegistryValueKind) -> None: ...
+
+
+class RegistryHive:
+    ClassesRoot = -2147483648
+    CurrentUser = -2147483647
+    LocalMachine = -2147483646
+    Users = -2147483645
+    PerformanceData = -2147483644
+    CurrentConfig = -2147483643
+
+
 class RegistryKey:
     def Close(self) -> None: ...
     @overload
@@ -80,3 +97,36 @@ class RegistryKey:
     @overload
     def SetValue(self, name: str, value: Object, valueKind: RegistryValueKind) -> None: ...
     def ToString(self) -> str: ...
+
+
+class RegistryKeyPermissionCheck:
+    Default = 0
+    ReadSubTree = 1
+    ReadWriteSubTree = 2
+
+
+class RegistryOptions:
+    #None = 0
+    Volatile = 1
+
+
+class RegistryValueKind:
+    Unknown = 0
+    String = 1
+    ExpandString = 2
+    Binary = 3
+    DWord = 4
+    MultiString = 7
+    QWord = 11
+    #None = -1
+
+
+class RegistryValueOptions:
+    #None = 0
+    DoNotExpandEnvironmentNames = 1
+
+
+class RegistryView:
+    Default = 0
+    Registry64 = 256
+    Registry32 = 512

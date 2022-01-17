@@ -1,6 +1,10 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class ICustomPluralizationMapping:
+    def AddWord(self, singular: str, plural: str) -> None: ...
+
+
 class PluralizationService(Object):
     def CreateService(culture: CultureInfo) -> PluralizationService: ...
     @property

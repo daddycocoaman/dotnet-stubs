@@ -1,5 +1,15 @@
-__all__ = ['Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure','Infrastructure']
+__all__ = ['Infrastructure']
 from typing import Tuple, Set, Iterable, List
+
+
+class CorsPolicyMetadata:
+    def __init__(self, policy: CorsPolicy): ...
+    @property
+    def Policy(self) -> CorsPolicy: ...
+
+
+class DisableCorsAttribute:
+    def __init__(self): ...
 
 
 class EnableCorsAttribute:

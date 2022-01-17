@@ -1,4 +1,4 @@
-__all__ = ['Providers','Providers','Providers','Providers','Providers','Providers','Providers','Providers']
+__all__ = ['Providers']
 from typing import Tuple, Set, Iterable, List
 
 
@@ -16,3 +16,17 @@ class ClientFormsIdentity(Object):
     @property
     def Provider(self) -> MembershipProvider: ...
     def RevalidateUser(self) -> None: ...
+
+
+class ClientRolePrincipal(Object):
+    def __init__(self, identity: IIdentity): ...
+    @property
+    def Identity(self) -> IIdentity: ...
+    def IsInRole(self, role: str) -> bool: ...
+
+
+class ConnectivityStatus(Object):
+    @property
+    def IsOffline() -> bool: ...
+    @IsOffline.setter
+    def IsOffline(value: bool) -> None: ...

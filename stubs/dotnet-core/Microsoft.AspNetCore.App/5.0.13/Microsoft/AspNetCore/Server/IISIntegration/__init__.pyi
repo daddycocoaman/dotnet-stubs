@@ -1,6 +1,15 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class IISDefaults:
+    def __init__(self): ...
+
+
+class IISHostingStartup:
+    def __init__(self): ...
+    def Configure(self, builder: IWebHostBuilder) -> None: ...
+
+
 class IISMiddleware:
     @overload
     def __init__(self, next: RequestDelegate, loggerFactory: ILoggerFactory, options: IOptions, pairingToken: str, authentication: IAuthenticationSchemeProvider, applicationLifetime: IHostApplicationLifetime): ...

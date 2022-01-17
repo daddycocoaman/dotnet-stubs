@@ -1,6 +1,11 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class HealthCheckMiddleware:
+    def __init__(self, next: RequestDelegate, healthCheckOptions: IOptions, healthCheckService: HealthCheckService): ...
+    def InvokeAsync(self, httpContext: HttpContext) -> Task: ...
+
+
 class HealthCheckOptions:
     def __init__(self): ...
     @property

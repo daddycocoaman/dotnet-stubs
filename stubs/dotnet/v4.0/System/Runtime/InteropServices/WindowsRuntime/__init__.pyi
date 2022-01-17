@@ -1,6 +1,24 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class AsyncInfo(Object):
+    @overload
+    def Run(taskProvider: Func) -> IAsyncAction: ...
+    @overload
+    def Run(taskProvider: Func`3) -> IAsyncOperationWithProgress: ...
+    @overload
+    def Run(taskProvider: Func`3) -> IAsyncActionWithProgress: ...
+    @overload
+    def Run(taskProvider: Func) -> IAsyncOperation: ...
+
+
+class WindowsRuntimeBuffer(Object):
+    @overload
+    def Create(capacity: int) -> IBuffer: ...
+    @overload
+    def Create(data: Set(Byte), offset: int, length: int, capacity: int) -> IBuffer: ...
+
+
 class WindowsRuntimeBufferExtensions(Object):
     @overload
     def AsBuffer(source: Set(Byte)) -> IBuffer: ...

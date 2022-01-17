@@ -1,6 +1,19 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class ProxyAccessType:
+    ProxyIEConfig = 0
+    ProxyWinHttpConfig = 1
+    ProxyAutoDetect = 2
+    ProxyNoProxyServer = 3
+
+
+class ProxyAuthentication:
+    Negotiate = 1
+    Basic = 2
+    Digest = 4
+
+
 class SessionOption:
     def __init__(self): ...
     @property

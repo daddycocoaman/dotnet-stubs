@@ -1,5 +1,18 @@
-__all__ = ['Commands','Commands','Commands','Commands','Commands','Commands','Commands','Commands']
+__all__ = ['Commands']
 from typing import Tuple, Set, Iterable, List
+
+
+class DtcCmdletBase:
+    pass
+
+
+class DtcDiagnosticException:
+    @overload
+    def __init__(self): ...
+    @overload
+    def __init__(self, message: str): ...
+    @overload
+    def __init__(self, message: str, innerException: Exception): ...
 
 
 class DtcDiagnosticResourceManagerJob:
@@ -10,3 +23,8 @@ class DtcDiagnosticResourceManagerJob:
     @property
     def StatusMessage(self) -> str: ...
     def StopJob(self) -> None: ...
+
+
+class DtcDiagnosticTransaction:
+    @property
+    def Id(self) -> Guid: ...

@@ -1,5 +1,14 @@
-__all__ = ['Core','Core','Core']
+__all__ = ['Core']
 from typing import Tuple, Set, Iterable, List
+
+
+class BadHttpRequestException:
+    @property
+    def StatusCode(self) -> int: ...
+
+
+class HttpContextExtensions:
+    pass
 
 
 class IISServerDefaults:

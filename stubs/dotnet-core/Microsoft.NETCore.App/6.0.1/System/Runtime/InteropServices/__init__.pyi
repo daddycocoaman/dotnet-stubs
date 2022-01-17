@@ -1,6 +1,15 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class Architecture:
+    X86 = 0
+    X64 = 1
+    Arm = 2
+    Arm64 = 3
+    Wasm = 4
+    S390x = 5
+
+
 class OSPlatform(ValueType):
     def Create(osPlatform: str) -> OSPlatform: ...
     @overload
@@ -19,3 +28,17 @@ class OSPlatform(ValueType):
     def op_Equality(left: OSPlatform, right: OSPlatform) -> bool: ...
     def op_Inequality(left: OSPlatform, right: OSPlatform) -> bool: ...
     def ToString(self) -> str: ...
+
+
+class RuntimeInformation(Object):
+    @property
+    def FrameworkDescription() -> str: ...
+    @property
+    def OSArchitecture() -> Architecture: ...
+    @property
+    def OSDescription() -> str: ...
+    @property
+    def ProcessArchitecture() -> Architecture: ...
+    @property
+    def RuntimeIdentifier() -> str: ...
+    def IsOSPlatform(osPlatform: OSPlatform) -> bool: ...

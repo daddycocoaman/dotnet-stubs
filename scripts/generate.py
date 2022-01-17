@@ -26,7 +26,7 @@ for path in GAC_DIR.iterdir():
 #     print(f"**********\n{target.name}\n**********")
 #     print(f"CMD: {cmd}")
 #     stubs = subprocess.run(cmd, shell=True, check=True)
-#     print("**********")
+#     print("**********\n")
 
 print("[*] Locating .NET Core Assemblies")
 for apptype in NETCORE_DIR.iterdir():

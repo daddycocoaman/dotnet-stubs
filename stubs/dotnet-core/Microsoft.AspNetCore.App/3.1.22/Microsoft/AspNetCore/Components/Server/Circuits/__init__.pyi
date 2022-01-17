@@ -1,6 +1,11 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class Circuit:
+    @property
+    def Id(self) -> str: ...
+
+
 class CircuitHandler:
     @property
     def Order(self) -> int: ...

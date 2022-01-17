@@ -1,6 +1,18 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class AspLog(Log):
+    @overload
+    def __init__(self): ...
+    @overload
+    def __init__(self, name: str): ...
+
+
+class DiskSpaceExhaustedOption:
+    ThrowException = 0
+    DiscardMessages = 1
+
+
 class FileLogTraceListener:
     @overload
     def __init__(self): ...
@@ -70,3 +82,40 @@ class FileLogTraceListener:
     def Write(self, message: str) -> None: ...
     @overload
     def WriteLine(self, message: str) -> None: ...
+
+
+class Log:
+    @overload
+    def __init__(self): ...
+    @overload
+    def __init__(self, name: str): ...
+    @property
+    def DefaultFileLogWriter(self) -> FileLogTraceListener: ...
+    @property
+    def TraceSource(self) -> TraceSource: ...
+    @overload
+    def WriteEntry(self, message: str) -> None: ...
+    @overload
+    def WriteEntry(self, message: str, severity: TraceEventType) -> None: ...
+    @overload
+    def WriteEntry(self, message: str, severity: TraceEventType, id: int) -> None: ...
+    @overload
+    def WriteException(self, ex: Exception) -> None: ...
+    @overload
+    def WriteException(self, ex: Exception, severity: TraceEventType, additionalInfo: str) -> None: ...
+    @overload
+    def WriteException(self, ex: Exception, severity: TraceEventType, additionalInfo: str, id: int) -> None: ...
+
+
+class LogFileCreationScheduleOption:
+    #None = 0
+    Daily = 1
+    Weekly = 2
+
+
+class LogFileLocation:
+    TempDirectory = 0
+    LocalUserApplicationDirectory = 1
+    CommonApplicationDirectory = 2
+    ExecutableDirectory = 3
+    Custom = 4

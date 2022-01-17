@@ -1,6 +1,13 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class XmlKnownDtds:
+    #None = 0
+    Xhtml10 = 1
+    Rss091 = 2
+    All = 65535
+
+
 class XmlPreloadedResolver(XmlResolver):
     @overload
     def __init__(self): ...

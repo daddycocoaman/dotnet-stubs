@@ -1,6 +1,13 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class WebSocketMiddlewareExtensions:
+    @overload
+    def UseWebSockets(app: IApplicationBuilder) -> IApplicationBuilder: ...
+    @overload
+    def UseWebSockets(app: IApplicationBuilder, options: WebSocketOptions) -> IApplicationBuilder: ...
+
+
 class WebSocketOptions:
     def __init__(self): ...
     @property

@@ -20,3 +20,8 @@ class NavLink(ComponentBase):
     def ChildContent(self, value: RenderFragment) -> None: ...
     @Match.setter
     def Match(self, value: NavLinkMatch) -> None: ...
+
+
+class NavLinkMatch:
+    Prefix = 0
+    All = 1

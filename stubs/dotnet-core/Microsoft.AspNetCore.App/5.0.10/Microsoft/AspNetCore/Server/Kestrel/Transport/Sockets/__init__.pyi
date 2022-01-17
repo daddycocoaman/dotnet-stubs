@@ -1,6 +1,11 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class SocketTransportFactory:
+    def __init__(self, options: IOptions, loggerFactory: ILoggerFactory): ...
+    def BindAsync(self, endpoint: EndPoint, cancellationToken: CancellationToken) -> ValueTask: ...
+
+
 class SocketTransportOptions:
     def __init__(self): ...
     @property

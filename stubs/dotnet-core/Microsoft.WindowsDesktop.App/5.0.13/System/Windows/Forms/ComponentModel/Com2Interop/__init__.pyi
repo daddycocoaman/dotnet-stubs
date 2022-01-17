@@ -1,6 +1,14 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class Com2Variant(Object):
+    def __init__(self): ...
+
+
+class ICom2PropertyPageDisplayService:
+    def ShowPropertyPage(self, title: str, component: Object, dispid: int, pageGuid: Guid, parentHandle: IntPtr) -> None: ...
+
+
 class IComPropertyBrowser:
     def add_ComComponentNameChanged(self, value: ComponentRenameEventHandler) -> None: ...
     def DropDownDone(self) -> None: ...

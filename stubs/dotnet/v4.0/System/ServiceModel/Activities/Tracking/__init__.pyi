@@ -1,5 +1,13 @@
-__all__ = ['Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration','Configuration']
+__all__ = ['Configuration']
 from typing import Tuple, Set, Iterable, List
+
+
+class ReceiveMessageRecord(CustomTrackingRecord):
+    def __init__(self, name: str): ...
+    @property
+    def E2EActivityId(self) -> Guid: ...
+    @property
+    def MessageId(self) -> Guid: ...
 
 
 class SendMessageRecord(CustomTrackingRecord):

@@ -1,6 +1,55 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class ColumnAttribute(Attribute):
+    @overload
+    def __init__(self): ...
+    @overload
+    def __init__(self, name: str): ...
+    @property
+    def Name(self) -> str: ...
+    @property
+    def Order(self) -> int: ...
+    @property
+    def TypeName(self) -> str: ...
+    @Order.setter
+    def Order(self, value: int) -> None: ...
+    @TypeName.setter
+    def TypeName(self, value: str) -> None: ...
+
+
+class ComplexTypeAttribute(Attribute):
+    def __init__(self): ...
+
+
+class DatabaseGeneratedAttribute(Attribute):
+    def __init__(self, databaseGeneratedOption: DatabaseGeneratedOption): ...
+    @property
+    def DatabaseGeneratedOption(self) -> DatabaseGeneratedOption: ...
+
+
+class DatabaseGeneratedOption:
+    #None = 0
+    Identity = 1
+    Computed = 2
+
+
+class ForeignKeyAttribute(Attribute):
+    def __init__(self, name: str): ...
+    @property
+    def Name(self) -> str: ...
+
+
+class InversePropertyAttribute(Attribute):
+    def __init__(self, property: str): ...
+    @property
+    def Property(self) -> str: ...
+
+
+class NotMappedAttribute(Attribute):
+    def __init__(self): ...
+
+
 class TableAttribute(Attribute):
     def __init__(self, name: str): ...
     @property

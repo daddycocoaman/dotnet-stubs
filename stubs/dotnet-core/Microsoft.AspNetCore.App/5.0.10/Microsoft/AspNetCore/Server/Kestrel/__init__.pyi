@@ -1,5 +1,16 @@
-__all__ = ['Core','Core','Core','Core','Core','Core','Core','Core','Core','Https','Https','Https']
+__all__ = ['Core','Https']
 from typing import Tuple, Set, Iterable, List
+
+
+class EndpointConfiguration:
+    @property
+    def ConfigSection(self) -> IConfigurationSection: ...
+    @property
+    def HttpsOptions(self) -> HttpsConnectionAdapterOptions: ...
+    @property
+    def IsHttps(self) -> bool: ...
+    @property
+    def ListenOptions(self) -> ListenOptions: ...
 
 
 class KestrelConfigurationLoader:

@@ -1,6 +1,18 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class EventWaitHandleAcl(Object):
+    def Create(initialState: bool, mode: EventResetMode, name: str, eventSecurity: EventWaitHandleSecurity) -> Tuple[EventWaitHandle, bool]: ...
+
+
+class MutexAcl(Object):
+    def Create(initiallyOwned: bool, name: str, mutexSecurity: MutexSecurity) -> Tuple[Mutex, bool]: ...
+
+
+class SemaphoreAcl(Object):
+    def Create(initialCount: int, maximumCount: int, name: str, semaphoreSecurity: SemaphoreSecurity) -> Tuple[Semaphore, bool]: ...
+
+
 class ThreadingAclExtensions(Object):
     @overload
     def GetAccessControl(handle: EventWaitHandle) -> EventWaitHandleSecurity: ...

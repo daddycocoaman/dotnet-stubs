@@ -1,6 +1,130 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class IConnectionCompleteFeature:
+    def OnCompleted(self, callback: Func, state: Object) -> None: ...
+
+
+class IConnectionEndPointFeature:
+    @property
+    def LocalEndPoint(self) -> EndPoint: ...
+    @property
+    def RemoteEndPoint(self) -> EndPoint: ...
+    @LocalEndPoint.setter
+    def LocalEndPoint(self, value: EndPoint) -> None: ...
+    @RemoteEndPoint.setter
+    def RemoteEndPoint(self, value: EndPoint) -> None: ...
+
+
+class IConnectionHeartbeatFeature:
+    def OnHeartbeat(self, action: Action, state: Object) -> None: ...
+
+
+class IConnectionIdFeature:
+    @property
+    def ConnectionId(self) -> str: ...
+    @ConnectionId.setter
+    def ConnectionId(self, value: str) -> None: ...
+
+
+class IConnectionInherentKeepAliveFeature:
+    @property
+    def HasInherentKeepAlive(self) -> bool: ...
+
+
+class IConnectionItemsFeature:
+    @property
+    def Items(self) -> IDictionary: ...
+    @Items.setter
+    def Items(self, value: IDictionary) -> None: ...
+
+
+class IConnectionLifetimeFeature:
+    def Abort(self) -> None: ...
+    @property
+    def ConnectionClosed(self) -> CancellationToken: ...
+    @ConnectionClosed.setter
+    def ConnectionClosed(self, value: CancellationToken) -> None: ...
+
+
+class IConnectionLifetimeNotificationFeature:
+    @property
+    def ConnectionClosedRequested(self) -> CancellationToken: ...
+    def RequestClose(self) -> None: ...
+    @ConnectionClosedRequested.setter
+    def ConnectionClosedRequested(self, value: CancellationToken) -> None: ...
+
+
+class IConnectionSocketFeature:
+    @property
+    def Socket(self) -> Socket: ...
+
+
+class IConnectionTransportFeature:
+    @property
+    def Transport(self) -> IDuplexPipe: ...
+    @Transport.setter
+    def Transport(self, value: IDuplexPipe) -> None: ...
+
+
+class IConnectionUserFeature:
+    @property
+    def User(self) -> ClaimsPrincipal: ...
+    @User.setter
+    def User(self, value: ClaimsPrincipal) -> None: ...
+
+
+class IMemoryPoolFeature:
+    @property
+    def MemoryPool(self) -> MemoryPool: ...
+
+
+class IPersistentStateFeature:
+    @property
+    def State(self) -> IDictionary: ...
+
+
+class IProtocolErrorCodeFeature:
+    @property
+    def Error(self) -> Int64: ...
+    @Error.setter
+    def Error(self, value: Int64) -> None: ...
+
+
+class IStreamAbortFeature:
+    def AbortRead(self, errorCode: Int64, abortReason: ConnectionAbortedException) -> None: ...
+    def AbortWrite(self, errorCode: Int64, abortReason: ConnectionAbortedException) -> None: ...
+
+
+class IStreamDirectionFeature:
+    @property
+    def CanRead(self) -> bool: ...
+    @property
+    def CanWrite(self) -> bool: ...
+
+
+class IStreamIdFeature:
+    @property
+    def StreamId(self) -> Int64: ...
+
+
+class ITlsHandshakeFeature:
+    @property
+    def CipherAlgorithm(self) -> CipherAlgorithmType: ...
+    @property
+    def CipherStrength(self) -> int: ...
+    @property
+    def HashAlgorithm(self) -> HashAlgorithmType: ...
+    @property
+    def HashStrength(self) -> int: ...
+    @property
+    def KeyExchangeAlgorithm(self) -> ExchangeAlgorithmType: ...
+    @property
+    def KeyExchangeStrength(self) -> int: ...
+    @property
+    def Protocol(self) -> SslProtocols: ...
+
+
 class ITransferFormatFeature:
     @property
     def ActiveFormat(self) -> TransferFormat: ...

@@ -1,6 +1,31 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class SemaphoreAccessRule(AccessRule):
+    @overload
+    def __init__(self, identity: IdentityReference, eventRights: SemaphoreRights, type: AccessControlType): ...
+    @overload
+    def __init__(self, identity: str, eventRights: SemaphoreRights, type: AccessControlType): ...
+    @property
+    def SemaphoreRights(self) -> SemaphoreRights: ...
+
+
+class SemaphoreAuditRule(AuditRule):
+    def __init__(self, identity: IdentityReference, eventRights: SemaphoreRights, flags: AuditFlags): ...
+    @property
+    def SemaphoreRights(self) -> SemaphoreRights: ...
+
+
+class SemaphoreRights:
+    Modify = 2
+    Delete = 65536
+    ReadPermissions = 131072
+    ChangePermissions = 262144
+    TakeOwnership = 524288
+    Synchronize = 1048576
+    FullControl = 2031619
+
+
 class SemaphoreSecurity(NativeObjectSecurity):
     @overload
     def __init__(self): ...

@@ -1,6 +1,22 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class InstanceCompletionAction:
+    DeleteNothing = 0
+    DeleteAll = 1
+
+
+class InstanceEncodingOption:
+    #None = 0
+    GZip = 1
+
+
+class InstanceLockedExceptionAction:
+    NoRetry = 0
+    BasicRetry = 1
+    AggressiveRetry = 2
+
+
 class SqlWorkflowInstanceStore(InstanceStore):
     @overload
     def __init__(self): ...

@@ -1,5 +1,9 @@
-__all__ = ['Core','Core','Core']
+__all__ = ['Core']
 from typing import Tuple, Set, Iterable, List
+
+
+class HttpContextExtensions:
+    pass
 
 
 class IISServerDefaults:

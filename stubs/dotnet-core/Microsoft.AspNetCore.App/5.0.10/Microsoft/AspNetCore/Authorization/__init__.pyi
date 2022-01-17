@@ -1,6 +1,10 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class IAllowAnonymous:
+    pass
+
+
 class IAuthorizeData:
     @property
     def AuthenticationSchemes(self) -> str: ...

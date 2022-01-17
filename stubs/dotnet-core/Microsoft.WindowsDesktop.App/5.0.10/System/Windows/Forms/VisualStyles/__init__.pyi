@@ -82,3 +82,38 @@ class TextMetrics(ValueType):
     def Underlined(self, value: bool) -> None: ...
     @Weight.setter
     def Weight(self, value: int) -> None: ...
+
+
+class TextMetricsCharacterSet:
+    Ansi = 0
+    Default = 1
+    Symbol = 2
+    Mac = 77
+    ShiftJis = 128
+    Hangul = 129
+    Johab = 130
+    Gb2312 = 134
+    ChineseBig5 = 136
+    Greek = 161
+    Turkish = 162
+    Vietnamese = 163
+    Hebrew = 177
+    Arabic = 178
+    Baltic = 186
+    Russian = 204
+    Thai = 222
+    EastEurope = 238
+    Oem = 255
+
+
+class TextMetricsPitchAndFamilyValues:
+    FixedPitch = 1
+    Vector = 2
+    TrueType = 4
+    Device = 8
+
+
+class ThemeSizeType:
+    Minimum = 0
+    True = 1
+    Draw = 2

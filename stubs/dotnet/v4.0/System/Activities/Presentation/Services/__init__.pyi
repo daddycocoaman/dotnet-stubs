@@ -1,6 +1,50 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class ModelChangedEventArgs(EventArgs):
+    @property
+    def ItemsAdded(self) -> Iterable[ModelItem]: ...
+    @property
+    def ItemsRemoved(self) -> Iterable[ModelItem]: ...
+    @property
+    def ModelChangeInfo(self) -> ModelChangeInfo: ...
+    @property
+    def PropertiesChanged(self) -> Iterable[ModelProperty]: ...
+
+
+class ModelChangeInfo(Object):
+    @property
+    def Key(self) -> ModelItem: ...
+    @property
+    def ModelChangeType(self) -> ModelChangeType: ...
+    @property
+    def OldValue(self) -> ModelItem: ...
+    @property
+    def PropertyName(self) -> str: ...
+    @property
+    def Subject(self) -> ModelItem: ...
+    @property
+    def Value(self) -> ModelItem: ...
+
+
+class ModelChangeType:
+    #None = 0
+    PropertyChanged = 1
+    CollectionItemAdded = 2
+    CollectionItemRemoved = 3
+    DictionaryKeyValueAdded = 4
+    DictionaryKeyValueRemoved = 5
+    DictionaryValueChanged = 6
+
+
+class ModelSearchService(Object):
+    def GenerateTextImage(self) -> TextImage: ...
+    @overload
+    def NavigateTo(self, location: int) -> bool: ...
+    @overload
+    def NavigateTo(self, startLine: int, startColumn: int, endLine: int, endColumn: int) -> bool: ...
+
+
 class ModelService(Object):
     def add_ModelChanged(self, value: EventHandler) -> None: ...
     @overload
@@ -14,3 +58,8 @@ class ModelService(Object):
     @property
     def Root(self) -> ModelItem: ...
     def remove_ModelChanged(self, value: EventHandler) -> None: ...
+
+
+class ViewService(Object):
+    def GetModel(self, view: DependencyObject) -> ModelItem: ...
+    def GetView(self, model: ModelItem) -> DependencyObject: ...

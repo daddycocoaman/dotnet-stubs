@@ -19,3 +19,13 @@ class ConsoleInputStream:
     def Position(self, value: Int64) -> None: ...
     def SetLength(self, value: Int64) -> None: ...
     def Write(self, buffer: Set(Byte), offset: int, count: int) -> None: ...
+
+
+class ConsoleStreamType:
+    Input = 0
+    Output = 1
+    ErrorOutput = 2
+
+
+class EnumBounds:
+    def IsValid(value: SourceCodeKind) -> bool: ...

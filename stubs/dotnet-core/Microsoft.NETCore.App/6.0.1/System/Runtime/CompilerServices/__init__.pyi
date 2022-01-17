@@ -1,6 +1,12 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class IDispatchConstantAttribute(CustomConstantAttribute):
+    def __init__(self): ...
+    @property
+    def Value(self) -> Object: ...
+
+
 class IUnknownConstantAttribute(CustomConstantAttribute):
     def __init__(self): ...
     @property

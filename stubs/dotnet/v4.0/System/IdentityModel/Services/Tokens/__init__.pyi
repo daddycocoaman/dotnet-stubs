@@ -1,6 +1,13 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class MachineKeySessionSecurityTokenHandler(SessionSecurityTokenHandler):
+    @overload
+    def __init__(self): ...
+    @overload
+    def __init__(self, tokenLifetime: TimeSpan): ...
+
+
 class MembershipUserNameSecurityTokenHandler(UserNameSecurityTokenHandler):
     @overload
     def __init__(self): ...

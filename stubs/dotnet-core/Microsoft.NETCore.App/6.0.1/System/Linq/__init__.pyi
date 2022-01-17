@@ -1,6 +1,18 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class EnumerableExecutor(Object):
+    pass
+
+
+
+
+class EnumerableQuery(Object):
+    pass
+
+
+
+
 class Queryable(Object):
     @overload
     def Aggregate(source: IQueryable, func: Expression) -> TSource: ...

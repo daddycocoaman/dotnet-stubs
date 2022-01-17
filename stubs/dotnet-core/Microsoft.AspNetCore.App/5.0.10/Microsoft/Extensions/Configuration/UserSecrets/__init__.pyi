@@ -1,6 +1,11 @@
 from typing import Tuple, Set, Iterable, List
 
 
+class PathHelper:
+    def __init__(self): ...
+    def GetSecretsPathFromSecretsId(userSecretsId: str) -> str: ...
+
+
 class UserSecretsIdAttribute:
     def __init__(self, userSecretId: str): ...
     @property
